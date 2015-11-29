@@ -29,6 +29,20 @@
 				fit: true   // 100% fit in a container
 			});
 		});
+			function showHideGB(){
+		var gb = document.getElementById("gb");
+		var w = gb.offsetWidth;
+		gb.opened ? moveGB(0, 30-w) : moveGB(20-w, 0);
+		gb.opened = !gb.opened;
+		}
+	function moveGB(x0, xf){
+		var gb = document.getElementById("gb");
+		var dx = Math.abs(x0-xf) > 10 ? 5 : 1;
+		var dir = xf>x0 ? 1 : -1;
+		var x = x0 + dx * dir;
+		gb.style.right = x.toString() + "px";
+		if(x0!=xf){setTimeout("moveGB("+x+", "+xf+")", 10);}
+		}
 	</script>
 <!--pop-up-->
 <script src="js/menu_jquery.js"></script>
@@ -40,7 +54,7 @@
 		<div class="container">
 			<div class="header-grids">
 				<div class="logo">
-					<h1><a  href="index.html"><span>Du Lịch</span> Việt</a></h1>
+					<h1><a  href="index.html"><span>Khách Sạn</span> Việt</a></h1>
 				</div>
 				<!--navbar-header-->
 				<div class="header-dropdown">
@@ -75,10 +89,20 @@
 							</script>
 						<!-- /script-for-menu -->
 				</div>
+				
+				
+
+				<!-- ĐĂng nhập -->
 				<div class="dropdown-grids">
 						<div id="loginContainer"><a href="#" id="loginButton"><span>Đăng nhập</span></a>
 							<div id="loginBox">                
 								<form id="loginForm">
+								<div class="sign">
+                                		<a href="#" id="signinButton">Đăng nhập</a>
+                                    	<a href="#" id="signupButton">Đăng kí</a>
+                               
+                                 	</div> 
+                                    <div class="signin">  
 									<div class="login-grids">
 										<div class="login-grid-left">
 											<fieldset id="body">
@@ -104,17 +128,40 @@
 												<div class="chrome-button">
 													<a href="#">Kết nối với Google</a>
 												</div>
-												<div class="button-bottom">
-													<p>Tài khoản mới? <a href="DangKi.html">Đăng ký</a></p>
-												</div>
 											</div>
 										</div>
 									</div>
+                                    </div>
+                                    <div class="signup">
+                                    <div class="login-grids">
+										<div class="login-grid-left">
+											<fieldset id="body">
+                                            	<fieldset>
+													<label for="text">Họ và Tên</label>
+													<input type="text" name="hovsten" id="hovsten">
+												</fieldset>
+												<fieldset>
+													<label for="email">Email</label>
+													<input type="text" name="email" id="email">
+												</fieldset>
+												<fieldset>
+													<label for="password">Mật khẩu</label>
+													<input type="password" name="password" id="password">
+												</fieldset>
+                                                <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Gửi đến email thông tin dịch vụ liên quan.</i></label>				
+												<input type="submit" id="login" value="Đăng kí">
+                                                								
+											</fieldset>
+										</div>
+									</div>
+                                    </div>>
 								</form>
 							</div>
 						</div>
 				</div>
 				<div class="clearfix"> </div>
+				<!-- ĐĂng nhập -->
+				
 			</div>
 		</div>
 	</div>
@@ -301,7 +348,7 @@
 																	 <li class="span1_of_3">
 																			<div class="date_btn">
 																				<form>
-																					<input type="submit" value="Tìm kiếm" />
+																					<input type="submit" value="TÌM KIẾM" />
 																				</form>
 																			</div>
 																	 </li>
@@ -342,12 +389,18 @@
 						
 	
 	
+	<div><center>
+		<audio controls autoplay>
+			<source src="music.mp3" type="audio/mpeg">
+		</audio>
+	</center></div>
+	
 	<!-- banner-bottom -->
 	<div class="banner-bottom">
 		<!-- container -->
 		<div class="container">
 			<div class="banner-bottom-info">
-				<h3>Các điểm đến nổi tiếng nhiều người đến nhất tại đây!</h3>
+				<h3>Các Khách sạn nổi tiếng nhiều người đến nhất tại đây!</h3>
 			</div>
 			<div class="banner-bottom-grids">
 				<div class="col-md-4 weekend-grids">
@@ -355,7 +408,7 @@
 						<a href="products.html">
 							<img src="images/w1.jpg" alt="" />
 							<div class="weekend-grid-info">
-								<h5>Dubai</h5>
+								<h5> New World Sài Gòn</h5>
 								<div class="rating">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -363,9 +416,9 @@
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 								</div>
-								<h6>Guest Rating 4.1 out of 5</h6>
-								<h4>Prices From</h4>
-								<p>$ 500</p>
+								<h6>76 Lê Lai, quận 1, TP HCM</h6>
+								<h4>----------</h4>
+								<p>7 - 100 triệu đồng</p>
 							</div>
 						</a>
 					</div>
@@ -375,15 +428,15 @@
 						<a href="products.html">
 							<img src="images/w2.jpg" alt="" />
 							<div class="weekend-grid-info">
-								<h5>Thailand</h5>
+								<h5>The Nam Hải (Hội An)</h5>
 								<div class="rating">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 								</div>
-								<h6>Guest Rating 2.9 out of 5</h6>
-								<h4>Prices From</h4>
-								<p>$ 190</p>
+								<h6>Điện Dương, quận Điện Bàn,Hội An</h6>
+								<h4>----------</h4>
+								<p>100 - 900 triệu đồng</p>
 							</div>
 						</a>
 					</div>
@@ -393,16 +446,16 @@
 						<a href="products.html">
 							<img src="images/w3.jpg" alt="" />
 							<div class="weekend-grid-info">
-								<h5>Lanzarote</h5>
+								<h5>Sofitel Legend Metropole</h5>
 								<div class="rating">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 								</div>
-								<h6>Guest Rating 3.5 out of 5</h6>
-								<h4>Prices From</h4>
-								<p>$ 420</p>
+								<h6>15 Ngô Quyền, Hoàn Kiếm, Hà Nội</h6>
+								<h4>----------</h4>
+								<p>50 - 700 triệu đồng</p>
 							</div>
 						</a>
 					</div>
@@ -415,7 +468,7 @@
 						<a href="products.html">
 							<img src="images/w4.jpg" alt="" />
 							<div class="weekend-grid-info">
-								<h5>France</h5>
+								<h5>Park Hyatt Sài Gòn</h5>
 								<div class="rating">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -423,9 +476,9 @@
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 								</div>
-								<h6>Guest Rating 3 out of 5</h6>
-								<h4>Prices From</h4>
-								<p>$ 370</p>
+								<h6>công trường Lam Sơn, Hồ Chí Minh</h6>
+								<h4>----------</h4>
+								<p>10 - 450 triệu đồng</p>
 							</div>
 						</a>
 					</div>
@@ -435,7 +488,7 @@
 						<a href="products.html">
 							<img src="images/w1.jpg" alt="" />
 							<div class="weekend-grid-info">
-								<h5>Dubai</h5>
+								<h5>Lotte Hà Nội</h5>
 								<div class="rating">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -443,9 +496,9 @@
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 								</div>
-								<h6>Guest Rating 4.1 out of 5</h6>
-								<h4>Prices From</h4>
-								<p>$ 500</p>
+								<h6>54 Liễu Giai, Ba Đình, Hà Nội</h6>
+								<h4>----------</h4>
+								<p>120 - 800 triệu đồng</p>
 							</div>
 						</a>
 					</div>
@@ -455,15 +508,15 @@
 						<a href="products.html">
 							<img src="images/w2.jpg" alt="" />
 							<div class="weekend-grid-info">
-								<h5>Thailand</h5>
+								<h5>Tân Sơn Nhất</h5>
 								<div class="rating">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 								</div>
-								<h6>Guest Rating 2.9 out of 5</h6>
-								<h4>Prices From</h4>
-								<p>$ 190</p>
+								<h6>202 Hoàng Văn Thụ, quận Phú Nhuận</h6>
+								<h4>----------</h4>
+								<p>10 - 200 triệu đồng</p>
 							</div>
 						</a>
 					</div>
@@ -476,16 +529,16 @@
 						<a href="products.html">
 							<img src="images/w3.jpg" alt="" />
 							<div class="weekend-grid-info">
-								<h5>Lanzarote</h5>
+								<h5>Equatorial</h5>
 								<div class="rating">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 								</div>
-								<h6>Guest Rating 3.5 out of 5</h6>
-								<h4>Prices From</h4>
-								<p>$ 420</p>
+								<h6>242 Trần Bình Trọng, quận 5</h6>
+								<h4>----------</h4>
+								<p>100 - 600 triệu đồng</p>
 							</div>
 						</a>
 					</div>
@@ -495,7 +548,7 @@
 						<a href="products.html">
 							<img src="images/w4.jpg" alt="" />
 							<div class="weekend-grid-info">
-								<h5>France</h5>
+								<h5>Renaissance Riverside</h5>
 								<div class="rating">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -503,9 +556,9 @@
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 								</div>
-								<h6>Guest Rating 3 out of 5</h6>
-								<h4>Prices From</h4>
-								<p>$ 370</p>
+								<h6>(8-15 Tôn Đức Thắng, quận 1</h6>
+								<h4>----------</h4>
+								<p>140 - 340 triệu đồng</p>
 							</div>
 						</a>
 					</div>
@@ -515,7 +568,7 @@
 						<a href="products.html">
 							<img src="images/w1.jpg" alt="" />
 							<div class="weekend-grid-info">
-								<h5>Dubai</h5>
+								<h5>Melia Hà Nội</h5>
 								<div class="rating">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -523,9 +576,9 @@
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 								</div>
-								<h6>Guest Rating 4.1 out of 5</h6>
-								<h4>Prices From</h4>
-								<p>$ 500</p>
+								<h6>44 Lý Thường Kiệt, quận Hoàn Kiếm</h6>
+								<h4>----------</h4>
+								<p>160 - 870 triệu đồng</p>
 							</div>
 						</a>
 					</div>
@@ -608,6 +661,33 @@
 				</div>
 		</div>
 	</div>
+	
+	
+	<!-- Chat -->
+ 	<div id="gb">
+
+		<div class="gbtab" onclick="showHideGB()"><center>Hỗ trợ trực tiếp</center></div>
+
+			<div class="gbcontent">
+			<!-- BEGIN CBOX - www.cbox.ws - v001 -->
+				<div id="cboxdiv" style="text-align: center; line-height: 0">
+				<div><iframe frameborder="0" width="160" height="305" src=				"http://www7.cbox.ws/box/?boxid=461741&boxtag=j5eqse&sec=main" marginheight="2" marginwidth="2" scrolling="auto" allowtransparency="yes" name="cboxmain7-461741" style="border:#EDDEDB 1px solid;" id="cboxmain7-461741"></iframe></div>
+				<div><iframe frameborder="0" width="200" height="75" src="http://www7.cbox.ws/box/?boxid=461741&boxtag=j5eqse&sec=form" marginheight="2" marginwidth="2" scrolling="no" allowtransparency="yes" name="cboxform7-461741" style="border:#EDDEDB 1px solid;border-top:0px" id="cboxform7-461741"></iframe></div>
+			</div>
+			<!-- END CBOX -->
+			<div style="text-align:right">
+				<a href="javascript:showHideGB()">
+				[Đóng chatbox]
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- Chat -->
+
+<script type="text/javascript">
+var gb = document.getElementById("gb");
+gb.style.right = (30-gb.offsetWidth).toString() + "px";
+</script>
 	<script defer src="js/jquery.flexslider.js"></script>
 	<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
 	<script src="js/jquery-ui.js"></script>

@@ -103,6 +103,38 @@ nav.navbar.navbar-default {
     border-bottom: solid 2px #6fd508;
 }
 /*--Login --*/
+.signup{
+	display:none;
+}
+.sign{
+	top:0px;
+	left:0px;
+	width:100%;
+	height:35px;
+	position:absolute;
+}
+#signupButton{
+	background: #ededed;
+	top:0px;
+	left:30%;
+	width:30%;
+	height:35px;
+	position:absolute;
+	text-align:center;
+	line-height:35px;
+}
+
+#signinButton{
+	top:0px;
+	left:0px;
+	width:30%;
+	height:35px;
+	position:absolute;
+	text-align:center;
+	line-height:35px;
+	background:#6fd508;
+}
+
 #loginContainer {
     position: relative;
     padding: 0.5em 0em;
@@ -222,7 +254,10 @@ input:focus {
 .login-grid-left{
     float: none;
     width: 100%;
-    padding: 2em;
+	padding-left:2em;
+	padding-right:2em;
+	padding-bottom:2em;
+	padding-top:4em;
 }
 .or-grid{
 	margin: 1em 0;
@@ -2878,3 +2913,123 @@ span.menu {
 		padding: 0;
 	}
 }	
+/* nội dung */
+.title-menu{
+	position: relative
+	width: 100%;
+	background: #ededed;
+	height:50px;
+	margin-left: 8em;
+	margin-right: 8em;
+	padding: 1em;
+}
+.type-menu-col2{
+	display: none;
+	left: 67px;
+	position:relative;
+	top: -20px;
+}
+.type-menu-col1{
+	display:block;
+	left: 67px;
+	position:relative;
+	top: -20px;
+}
+.type-menu-col3{
+	display: none;
+	left: 67px;
+	position:relative;
+	top: -20px;
+}
+.type-menu-col4{
+	display: none;
+	left: 67px;
+	position:relative;
+	top: -20px;
+}
+.tille-menu span{
+	display:inline;
+
+}
+.content{
+	height: auto;
+	position: relative;
+	margin-left: 8em;
+	margin-right: 8em;
+}
+.menu-col{
+	width:14em;
+	height: 200px;
+	left: 4em;
+	top: 2em;
+	position: relative;
+}
+
+.menu-col ul{
+	list-style-type:none;
+	padding:0px;
+	margin:0px;
+}
+.menu-col ul li{
+	display:table-row;
+}
+.menu-col ul a{
+	text-decoration:none;
+	height:50px;
+	width: 14em;
+	float:left;
+	line-height:50px;
+}
+.menu-col ul a:hover{
+	background:#ededed;
+}
+.item-menu-row1{
+	font-weight:bold;
+	color: #6fd508;
+	border-right:solid 1px #6fd508;
+}
+.item-menu-row2 .item-menu-row3 .item-menu-row4{
+	color: #333;
+}
+
+.item-content{
+	position: relative;
+	left: 20em;
+	top: -170px;
+	height:auto;
+	width: 800px;
+}
+.p2{
+	display:none;
+}
+.p3{
+	display:none;
+}
+.p4{
+	display:none;
+}
+.vide{
+	clear:both;
+}
+#gb{
+position:fixed;
+top:50px;
+z-index:+1000;
+}
+* html #gb{position:relative;}
+
+.gbtab{
+height:100px;
+width:30px;
+float:left;
+cursor:pointer;
+background: #6fd508;
+color:#FFF;
+
+}
+.gbcontent{
+float:left;
+border:2px solid #990000;
+background:#F5F5F5;
+padding:10px;
+}
